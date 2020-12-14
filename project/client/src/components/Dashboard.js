@@ -170,26 +170,33 @@ export class Dashboard extends React.Component {
 
   render() {    
     return (
+
       <div className="Dashboard">
+
+
 
         <PageNavbar active="dashboard" />
 
          <div className="container bestgenres-container">
+
 			      <div className="jumbotron">
 			        <div className="h5">Explore Conflicts</div>
 
-                <div className="dropdowns-container" style={divStyle}>
+                <div className="dropdowns-container">
                   <div className="countryDropdown1-container">
+                 
                     <select value={this.state.selectedConflict} onChange={this.handleChange} className="dropdown" id="countryDropdown1">
                         <option select value> -- Select A Conflict -- </option>
                           {this.state.allConflicts}
                     </select>
+
                     <button className="submit-btn" id="SubmitBtn" onClick={() => this.showOnMap(this.state.selectedConflict)}> Submit</button>
                   </div>
                 </div>
 
             </div>
          </div>
+
 
         <Map google={this.props.google} zoom={3} initialCenter={{lat: 30,lng: -20}} containerStyle={containerStyle}>
 
@@ -207,10 +214,13 @@ export class Dashboard extends React.Component {
           </InfoWindow>
 
         </Map>
+         
 
       </div>
-    );
+    )
+
   }
+
 }
 
 export default GoogleApiWrapper({

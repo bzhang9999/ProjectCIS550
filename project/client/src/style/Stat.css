@@ -14,3 +14,16 @@
 .movieResults .title, .movieResults .id, .movieResults .rating, .movieResults .votes, .headers .header {
   flex: 1 0 25%;
 }
+
+.submit-btn {
+	margin-bottom:10px;
+}
+
+
+.input-container {
+	margin-bottom:10px;
+}
+
+.dropdown-container {
+	margin-bottom: 10px;
+}

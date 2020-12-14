@@ -15,3 +15,7 @@
 .movie .header, .movieResults .title, .movieResults .genre, .movieResults .votes, .movieResults .year, .movieResults .rating {
   flex: 1 0 25%;
 }
+
+.submit-btn {
+	margin-top:10px;
+}

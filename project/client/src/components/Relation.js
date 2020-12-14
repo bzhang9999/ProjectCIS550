@@ -1,7 +1,7 @@
 import React from 'react';
 import PageNavbar from './PageNavbar';
 import RelationRow from './RelationRow';
-import '../style/BestGenres.css';
+import '../style/Relation.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class BestGenre extends React.Component {
@@ -143,6 +143,8 @@ export default class BestGenre extends React.Component {
 			            	<option select value> -- select an option -- </option>
 			            	{this.state.countries}
 			            </select>
+			            <br>
+			            </br>
 			            <button className="submit-btn" id="decadesSubmitBtn" onClick={this.submitCountries}>Submit</button>
 			          </div>
 			        </div>

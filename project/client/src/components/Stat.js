@@ -1,7 +1,7 @@
 import React from 'react';
 import PageNavbar from './PageNavbar';
 import StatRow from './StatRow';
-import '../style/Recommendations.css';
+import '../style/Stat.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class Recommendations extends React.Component {
@@ -13,7 +13,6 @@ export default class Recommendations extends React.Component {
 		this.state = {
 			startYear: "",
 			endYear: "",
-			movieName: "",
 			country: " ",
 			recMovies: [],
 			treaties: [],
@@ -22,7 +21,7 @@ export default class Recommendations extends React.Component {
 		}
 
 		this.handleMovieNameChange = this.handleMovieNameChange.bind(this);
-		this.submitMovie = this.submitMovie.bind(this);
+		this.submitEntry = this.submitEntry.bind(this);
 		this.handleStartYear = this.handleStartYear.bind(this);
 		this.handleEndYear = this.handleEndYear.bind(this);
 		this.handleCountry = this.handleCountry.bind(this);
@@ -88,7 +87,7 @@ export default class Recommendations extends React.Component {
 
 	/* ---- Q2 (Recommendations) ---- */
 	// Hint: Name of movie submitted is contained in `this.state.movieName`.
-	submitMovie() {
+	submitEntry() {
 
 		let year1 = this.state.startYear;
 		let year2 = this.state.endYear;
@@ -192,7 +191,7 @@ export default class Recommendations extends React.Component {
 							</select>
 							
 						</div>
-						<button id="submitMovieBtn" className="submit-btn" onClick={this.submitMovie}>Submit</button>
+						<button id="submitMovieBtn" className="submit-btn" onClick={this.submitEntry}>Submit</button>
 						
 
 
@@ -224,7 +223,11 @@ export default class Recommendations extends React.Component {
 			    		</div>
 			    	</div>
 			    </div>
+			    <style>
+
+		    	</style>
 		    </div>
+
 		);
 	}
 }
