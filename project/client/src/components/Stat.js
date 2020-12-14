@@ -8,8 +8,6 @@ export default class Recommendations extends React.Component {
 	constructor(props) {
 		super(props);
 
-		// State maintained by this React component is the selected movie name,
-		// and the list of recommended movies.
 		this.state = {
 			startYear: "",
 			endYear: "",
@@ -40,10 +38,6 @@ export default class Recommendations extends React.Component {
 	      .then(res => res.json()) // Convert the response data to a JSON.
 	      .then(countriesList => {
 	        if (!countriesList) return;
-	        // Map each genreObj in genreList to an HTML element:
-	        // A button which triggers the showMovies function for each genre.
-	        //console.log("hello");
-	        //let h = 'hello';
 
 	        //the field name should be the column name
 	        let countryDivs = countriesList.map((countryObj, i) =>
@@ -85,14 +79,12 @@ export default class Recommendations extends React.Component {
 		});
 	}
 
-	/* ---- Q2 (Recommendations) ---- */
-	// Hint: Name of movie submitted is contained in `this.state.movieName`.
+
 	submitEntry() {
 
 		let year1 = this.state.startYear;
 		let year2 = this.state.endYear;
 		let country = this.state.country;
-		//let movieName = this.state.movieName;
 
 		console.log("In submitMovie()");
 		console.log("Recommendations - country: ", country);
@@ -102,7 +94,6 @@ export default class Recommendations extends React.Component {
 
 
 		let route = "http://localhost:8081/countryRange/" + year1 + "/" + year2 + "/" + country + "/"; 
-		//let route = "http://localhost:8081/recommendations/" + movieName;
 	    console.log(route);
 	    fetch(route, {
 	      method: 'GET'
@@ -160,7 +151,7 @@ export default class Recommendations extends React.Component {
 				<PageNavbar active="recommendations" />
 
 			    <div className="container recommendations-container">
-			    	<div className="jumbotron">
+			    	<div className="jumbotron1">
 			    		<div className="h5">Statistical Exploration Page</div>
 			    		<br></br>
 
@@ -197,7 +188,7 @@ export default class Recommendations extends React.Component {
 
 			       
 			    		<div className="header-container">
-			    			<div className="h6">CONFLICTS</div>
+			    			<div className="h3">CONFLICTS</div>
 			    			<div className="headers">
 			    				<div className="header"><strong>Conflict</strong></div>
 			    				<div className="header"><strong>Country</strong></div>
@@ -210,7 +201,7 @@ export default class Recommendations extends React.Component {
 			    		</div>
 
 			    		<div className="header-container">
-			    			<div className="h6">TREATIES</div>
+			    			<div className="h3">TREATIES</div>
 			    			<div className="headers">
 			    				<div className="header"><strong>Country 1</strong></div>
 			    				<div className="header"><strong>Country 2</strong></div>

@@ -23,7 +23,7 @@ export default class BestGenre extends React.Component {
 		this.handleChange2 = this.handleChange2.bind(this);
 	}
 
-	/* ---- Q3a (Best Genres) ---- */
+
 	componentDidMount() {
 
 		console.log("country drop downs");
@@ -68,7 +68,7 @@ export default class BestGenre extends React.Component {
 		});
 	}
 
-	/* ---- Q3b (Best Genres) ---- */
+
 	submitCountries() {
 
 		let year = this.state.selectedDecade;
@@ -111,15 +111,15 @@ export default class BestGenre extends React.Component {
 				<PageNavbar active="bestgenres" />
 
 				<div className="container bestgenres-container">
-			      <div className="jumbotron">
-			      	<div className="h3"> Statistical Relationship Page</div>
+			      <div className="jumbotron1">
+			      	<div className="h5"> Statistical Relationship Page</div>
 			        <div className="h7">The peace and conflict score (0 meaning that the two countries are at complete peace and 100 meaning 
 			        that the two countries are in complete conflict) is calculated using the following method. We calculate the peace score by 
 			        weighing the different types of treaties based on the degree of peacefulness: 0.4 for defense, 0.3 for neutrality, 0.3 for
 			         nonaggression, and 0.1 for entente (based on dataset description  <a href="https://correlatesofwar.org/data-sets/formal-alliances/formal-alliances-v4-1">here</a> 
 			         ). We also factor in multiple labels per treatise, which indicates that more treatise leads to a stronger alliance. To calculate the conflict score, we weigh the number 
 			         of deaths over the total population of the country for each war that the two countries have been involved in, take the average of the ratios, and multiply that value by
-			          1000 to get a value that ranges from 0 to around 67. Finally, add the peace score and the conflict score for a value between 0 and 100. To begin,
+			          1000 to get a value that ranges from 0 to around 67. Finally, add the peace score and the conflict score for a value between -100 and 100. To begin,
 			          please select two countries below.
 
 
@@ -150,7 +150,7 @@ export default class BestGenre extends React.Component {
 			        </div>
 
 			      </div>
-			      <div className="jumbotron">
+			      <div className="jumbotron1">
 			        <div className="movies-container">
 			          <div className="movie">
 			            <div className="header"><strong>Conflict Score</strong></div>

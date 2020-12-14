@@ -19,3 +19,13 @@
 .submit-btn {
 	margin-top:10px;
 }
+
+.jumbotron1 {
+  background-color:#D4E3CA;
+  flex: 1 0 20%;
+  margin: 5px 0;
+  padding: 30px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 25px;
+}

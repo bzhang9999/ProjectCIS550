@@ -9,7 +9,7 @@ var connection = mysql.createPool(config);
 /* -------------------------------------------------- */
 
 
-/* ---- Q1a (Dashboard) ---- */
+
 function getConflict(req, res) {
 
   console.log("hello");
@@ -25,7 +25,7 @@ function getConflict(req, res) {
 };
 
 
-/* ---- Q1b (Dashboard) ---- */
+
 function getCountriesInConflict(req, res) {
 
   console.log(req.params.conflict);
@@ -45,7 +45,7 @@ function getCountriesInConflict(req, res) {
   
 };
 
-/* ---- Q2 (Recommendations) ---- */
+
 function getCountryRange(req, res) {
 
   console.log("year1: ", req.params.year1);
@@ -179,16 +179,9 @@ function getConflictTreaty(req, res) {
   
 };
 
-/* ---- (Best Genres) ---- */
+
 function getCountries(req, res) {
-	// var query = `
- //    SELECT DISTINCT (FLOOR(year/10)*10) AS decade
- //    FROM (
- //      SELECT DISTINCT release_year as year
- //      FROM Movies
- //      ORDER BY release_year
- //    ) y
- //  `;
+
 
   var query = `SELECT country_name FROM Country ORDER BY country_name`;
   connection.query(query, function(err, rows, fields) {
@@ -199,11 +192,9 @@ function getCountries(req, res) {
   });
 }
 
-/* ---- Q3 (Best Genres) ---- */
+
 function getScores(req, res) {
 
-  //let beginning = parseInt(req.params.decade);
-  //let end = parseInt(beginning) + 9;
 
   var country1 = req.params.country1;
   var country2 = req.params.country2;
@@ -289,22 +280,7 @@ GROUP BY country1, country2
 SELECT SUM(num_treatises) AS num_treatises, SUM(values1) AS peace_score, MAX(num_conflicts) AS num_conflicts, MAX(conflict_score) AS conflict_score, CASE WHEN MAX(conflict_score)+SUM(values1) > 100 THEN 100 WHEN MAX(conflict_score) + SUM(values1) < -100 THEN -100 ELSE MAX(conflict_score) + SUM(values1) END AS peace_conflict_score 
 FROM scores S JOIN AvgRatios;`;
 
-  // var query = `
-  //     WITH distinctGenres AS (
-  //       SELECT DISTINCT genre
-  //       FROM genres
-  //   ), available AS (
-  //       SELECT genres.genre, AVG(movies.rating) AS avg_rating
-  //       FROM genres
-  //       JOIN movies ON genres.movie_id = movies.id
-  //       WHERE movies.release_year BETWEEN '${beginning}' AND '${end}'
-  //       GROUP BY genres.genre
-  //       )
-  //   SELECT distinctGenres.genre, IFNULL(avg_rating, 0) AS avg_rating
-  //   FROM distinctGenres
-  //   LEFT JOIN available ON distinctGenres.genre = available.genre
-  //   ORDER BY avg_rating DESC, distinctGenres.genre; 
-  // `;
+
   connection.query(query, function(err, rows, fields) {
     if (err) console.log(err);
     else {

@@ -9,7 +9,7 @@ const containerStyle = {
     position: 'absolute',  
     width: '85%',
     height: '80%',
-    top: 260,
+    top: 220,
     left: 100
 }
 
@@ -23,8 +23,7 @@ export class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     
-    // The state maintained by this React Component. This component maintains the list of genres,
-    // and a list of movies for a specified genre.
+
     this.state = {
       allConflicts: [],
       side1codes: [],
@@ -72,7 +71,7 @@ export class Dashboard extends React.Component {
   }
 
 
-  /* ---- Q1b (Dashboard) ---- */
+
   showOnMap(conflict) {
      this.setState({
           side1position: [],
@@ -179,7 +178,7 @@ export class Dashboard extends React.Component {
 
          <div className="container bestgenres-container">
 
-			      <div className="jumbotron">
+			      <div className="jumbotron1">
 			        <div className="h5">Explore Conflicts</div>
 
                 <div className="dropdowns-container">
